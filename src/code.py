@@ -173,7 +173,7 @@ class LightSensorDisplay:
 
 # -------------------------------------------------------------------------------------------------------
 
-display = LightSensorDisplay().run()
+display = LightSensorDisplay()
 display.run()
 
 
