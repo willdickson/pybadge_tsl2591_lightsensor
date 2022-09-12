@@ -140,11 +140,8 @@ class LightSensorDisplay:
 
 
     def run(self):
-
         while True:
-
             buttons = self.pad.get_pressed()
-            print(buttons)
             if buttons:
                 now = time.monotonic()
                 if now - self.last_button_press > self.BUTTON_DEADTIME:
@@ -157,7 +154,6 @@ class LightSensorDisplay:
                         self.sensor.integration_time = self.IWIN_DICT[self.iwin_name]
                         self.iwin_label.text = f'IWIN (B) = {self.iwin_name}'
                     self.last_button_press = now
-
             try:
                 value = self.read_sensor()
             except RuntimeError:
